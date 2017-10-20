@@ -13,6 +13,22 @@ $viewW: 640px;
     @include transform(translate3d(-$viewW, 0, 0));
   }
 
+  .zmiti-sm-title {
+    font-size: 32px;
+    color: #ffe178;
+    text-align: center;
+    @include pos(a);
+    left: 40px;
+    top: 150px;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      @include transition(.4s 1s);
+    }
+
+  }
+
   //theme of paper 
   .zmiti-index-paper-theme {
     @include pos(a);

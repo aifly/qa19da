@@ -369,6 +369,12 @@ $viewW: 640px;
       @include transform(translate3d(0, 0, 0));
     }
 
+    .zmiti-copyright {
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+    }
+
     .zmiti-dangjian-score-C {
       width: 90%;
       margin: 150px auto 50px;

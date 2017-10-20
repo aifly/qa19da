@@ -294,6 +294,10 @@
     .zmiti-content-main-ui .zmiti-dangjian-result-page.active {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
+    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-copyright {
+      color: #fff;
+      text-align: center;
+      font-size: 32px; }
     .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-score-C {
       width: 90%;
       margin: 150px auto 50px;

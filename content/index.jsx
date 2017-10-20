@@ -226,7 +226,7 @@ class ZmitiContentApp extends Component {
 
 						return	<section className={'zmiti-dangjian-q-scroll '+ className} ref={'zmiti-dangjian-q-scroll'+q} key={q} style={scrollStyle}>
 									<audio src='./assets/music/error.mp3' ref='error'></audio>
-									<audio src='./assets/music/right.mp3' ref='right'></audio>
+									<audio src='./assets/music/right1.mp3' ref='right'></audio>
 									<section style={{paddingBottom:60}}>
 										<div className='zmiti-dangjian-q-title'>
 											{question.isMultiselect && <span hidden> * 此题为多选题 </span>}
@@ -260,34 +260,35 @@ class ZmitiContentApp extends Component {
 				</section>
 
 				<section className={'zmiti-dangjian-result-page lt-full ' + (this.state.showScore?'active':'') }style={mainStyle}>
-						<div className='zmiti-dangjian-score-C'>
-							<div className='zmiti-dangjian-score'>
-								{this.state.score}
-								<svg width="100%" height="200px" version="1.1"
-							xmlns="http://www.w3.org/2000/svg">
-									<circle cx={110} cy='110' r='90' fill='none' strokeDasharray="14,6" stroke='#000'></circle>
-								</svg>
-							</div>
-							 <div>您答对了{this.state.rightAnswerCount}道题</div>
-							 <div>获得“{this.state.level}”称号</div>
-							
+					<div className='zmiti-dangjian-score-C'>
+						<div className='zmiti-dangjian-score'>
+							{this.state.score}
+							<svg width="100%" height="200px" version="1.1"
+						xmlns="http://www.w3.org/2000/svg">
+								<circle cx={110} cy='110' r='90' fill='none' strokeDasharray="14,6" stroke='#000'></circle>
+							</svg>
 						</div>
-						<div onTouchTap={this.watchAnswer.bind(this)} className='zmiti-dangjian-result-btn'>
-							<span><img src='./assets/images/watch.png'/></span>
-							<span>查看答案</span>
-						</div>
+						 <div>您答对了{this.state.rightAnswerCount}道题</div>
+						 {this.state.rightAnswerCount>0 && <div style={{fontWeight:'bold'}}>达到“{this.state.level}”水平</div>}
+						 {this.state.rightAnswerCount<=0 && <div style={{fontWeight:'bold'}}>尚需努力！</div>}
+						
+					</div>
+					<div onTouchTap={this.watchAnswer.bind(this)} className='zmiti-dangjian-result-btn'>
+						<span><img src='./assets/images/watch.png'/></span>
+						<span>查看答案</span>
+					</div>
 
-						<div onTouchTap={this.doAgin.bind(this)} className='zmiti-dangjian-result-btn'>
-							<span><img src='./assets/images/refresh.png'/></span>
-							<span>再做一次</span>
-						</div>
+					<div onTouchTap={this.doAgin.bind(this)} className='zmiti-dangjian-result-btn'>
+						<span><img src='./assets/images/refresh.png'/></span>
+						<span>再做一次</span>
+					</div>
 
-						<div onTouchTap={this.showMask.bind(this)} className='zmiti-dangjian-result-btn'>
-							<span><img src='./assets/images/share-ico.png'/></span>
-							<span>分享好友</span>
-						</div>
-
-					</section>
+					<div onTouchTap={this.showMask.bind(this)} className='zmiti-dangjian-result-btn'>
+						<span><img src='./assets/images/share-ico.png'/></span>
+						<span>分享好友</span>
+					</div>
+					<div className='zmiti-copyright'>新华社客户端<span style={{opacity:0}}>新</span>半月谈杂志联合出品</div>
+				</section>
 			</div>;
 				break;
 		}
@@ -344,6 +345,9 @@ class ZmitiContentApp extends Component {
 			hideList: false,
 			currentQid: 0,
 			showScore: false,
+			clock: 0,
+			iNow: 0,
+			result: '',
 			currentAnswer: []
 		}, () => {
 			//this.scroll.refresh();
@@ -447,8 +451,22 @@ class ZmitiContentApp extends Component {
 
 		//'您答对了'+this.state.rightAnswerCount+'道题，击败了'+(Math.random()*90|0 + 10)+'%的网友，获得"'+ this.state.level +'"称号',
 		setTimeout(() => {
+			var scale = (Math.random() * 90 | 0) + 10;
+
+			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
+			if (this.state.rightAnswerCount === 0) {
+				scale = 0;
+				title = '学习十九大报告，尚需努力！';
+			} else if (this.state.rightAnswerCount < 10) {
+				scale = (Math.random() * 50 | 0);
+			} else if (this.state.rightAnswerCount >= 10 && this.state.rightAnswerCount <= 19) {
+				scale = (Math.random() * 80 | 0) + 10;
+			} else {
+				scale = 99;
+			}
+
 			s.props.wxConfig(
-				window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, (Math.random() * 90 | 0) + 10).replace(/{level}/, this.state.level),
+				title,
 				window.share.desc,
 				s.props.shareImg,
 				s.props.appId,
@@ -526,8 +544,9 @@ class ZmitiContentApp extends Component {
 
 
 				//判断用户是否回答正确
-
-				this.refs[this.props.question[this.state.currentQid].answer[i].isRight ? 'right' : 'error'].play()
+				var audio = this.refs[this.props.question[this.state.currentQid].answer[i].isRight ? 'right' : 'error'];
+				audio.currentTime = 0;
+				audio.play()
 				this.state.result = this.props.question[this.state.currentQid].answer[i].isRight ? 'active' : 'error'
 				this.state.iNow = i;
 				this.forceUpdate();
@@ -658,6 +677,14 @@ class ZmitiContentApp extends Component {
 
 
 		});
+
+		obserable.on('countdown', function() {
+			this.timer = setInterval(() => {
+				this.setState({
+					clock: this.state.clock + 1
+				})
+			}, 1000)
+		}.bind(this))
 
 		obserable.on('modifyTel', (data) => {
 			if (typeof data === 'string') {

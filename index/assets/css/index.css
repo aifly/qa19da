@@ -22,6 +22,18 @@
     transition: 0.4s;
     -webkit-transform: translate3d(-640px, 0, 0);
     transform: translate3d(-640px, 0, 0); }
+  .zmiti-index-main-ui .zmiti-sm-title {
+    font-size: 32px;
+    color: #ffe178;
+    text-align: center;
+    position: absolute;
+    left: 40px;
+    top: 150px;
+    opacity: 0; }
+    .zmiti-index-main-ui .zmiti-sm-title.active {
+      opacity: 1;
+      -webkit-transition: 0.4s 1s;
+      transition: 0.4s 1s; }
   .zmiti-index-main-ui .zmiti-index-paper-theme {
     position: absolute;
     width: 640px;

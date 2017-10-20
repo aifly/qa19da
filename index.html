@@ -25,10 +25,8 @@
 			<span class='zmiti-loadin-text'>正在进入...</span>
 		</div>
 		
-		<!-- 
-			<script src='http://localhost:4600/index.js'></script> 
-		-->
-
+		
+		<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
 		<script type="text/javascript">
 			window.PointerEvent = void 0;
 			function onError(){
@@ -38,28 +36,28 @@
 			}
 
 			window.formTitle = '请输入你的姓名和电话';
-			//你答对了x题，超过了全国XX%的人
+			//学习十九大报告，你超过了××%的人，达到＊＊＊＊水平。
 			window.share  = {
-				title:'你答对了{rightAnswerCount}题，超过了全国{scale}%的人，达到“{level}”水平',
-				desc:'十九大报告测试题邀您答题'
+				title:'学习十九大报告，我答对了{rightAnswerCount}题，超过了{scale}%的人，达到“{level}”水平',
+				desc:'十九大报告小测验 邀您答题'
 			}
 
-			/*(function(){
+			function loadScript(src){
 				var script  = document.createElement('script');
-				script.src = './assets/js/index.js?aa='+new Date().getTime();
+				script.src = src+'?aa='+new Date().getTime();
 				document.body.appendChild(script);
-			})()*/
+			}
+
+			loadScript('./assets/js/vendor.js')
+			loadScript('./assets/js/index.js')
+
 
 		</script>
 
-		<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
-
 		
-		 
-		<script src='./assets/js/vendor.js'></script>
-		<script src='./assets/js/index.js'></script>
 		<!--
 		<script src='http://localhost:4009/index.js' onError='onError()'></script>
+		 
 		  -->
 	
 </body>

@@ -254,16 +254,16 @@
 	"totalScore": 20,
 	"level": [{
 		"score": 20,
-		"name": "特级学员"
+		"name": "特级"
 	}, {
 		"score": 15,
-		"name": "高级学员"
+		"name": "高级"
 	}, {
 		"score": 10,
-		"name": "中级学员"
+		"name": "中级"
 	}, {
 		"score": 5,
-		"name": "初级学员"
+		"name": "初级"
 	}],
 	"isMultiselect": false,
 	"showLevel": true,
