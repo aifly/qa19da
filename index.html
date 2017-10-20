@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=640,user-scalable=no">
 	<meta name="format-detection" content="telephone=no,email=no" />
-	<title></title>
+	<title>进入新时代  报告学起来</title>
 	<script>
 		document.addEventListener("touchmove",function(e){e.preventDefault();});
 	</script>
@@ -27,6 +27,7 @@
 		
 		
 		<script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+		<script src='./assets/js/vendor.js'></script>
 		<script type="text/javascript">
 			window.PointerEvent = void 0;
 			function onError(){
@@ -34,6 +35,8 @@
 				script.src = './assets/js/index.js?aa='+new Date().getTime();
 				document.body.appendChild(script);
 			}
+
+			window.subTitle = '是学霸还是学神，测试下你有多强？';
 
 			window.formTitle = '请输入你的姓名和电话';
 			//学习十九大报告，你超过了××%的人，达到＊＊＊＊水平。
@@ -48,7 +51,6 @@
 				document.body.appendChild(script);
 			}
 
-			loadScript('./assets/js/vendor.js')
 			loadScript('./assets/js/index.js')
 
 

@@ -14,13 +14,15 @@ $viewW: 640px;
   }
 
   .zmiti-sm-title {
-    font-size: 32px;
-    color: #ffe178;
+    font-size: 36px;
+    text-align:center;
+    color: #fffcb6;
     text-align: center;
     @include pos(a);
-    left: 40px;
-    top: 150px;
+    left: 0px;
+    top: 550px;
     opacity: 0;
+    width: 100%;
 
     &.active {
       opacity: 1;

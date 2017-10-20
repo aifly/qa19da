@@ -466,7 +466,7 @@ export class App extends Component {
 			this.state.isPublish = data.isPublish
 			this.state.isUseWX = data.isUseWX;
 			this.state.isShowUseTime = data.isShowUseTime;
-			document.title = this.state.title;
+			//document.title = this.state.title;
 			this.state.wxConfig = this.wxConfig.bind(this);
 
 

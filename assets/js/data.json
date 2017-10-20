@@ -57,7 +57,7 @@
 			"content": "党章",
 			"isRight": true
 		}, {
-			"content": "宪法",
+			"content": "规定",
 			"isRight": false
 		}]
 	}, {
@@ -243,7 +243,7 @@
 	}],
 	"theme": "DANGJIAN",
 	"duration": 36000,
-	"title": "新时代闯关 试试你多强？",
+	"title": "进入新时代  报告学起来",
 	"wxappid": "wx5ec3d35069383211",
 	"wxappsecret": "d94ea41d9cd2ba03c7cab5fc0e212cec",
 	"worksid": "1359526489",
@@ -268,7 +268,7 @@
 	"isMultiselect": false,
 	"showLevel": true,
 	"indexPage": "./assets/images/index-bg.jpg",
-	"loadingImg": ["./assets/images/300.jpg", "./assets/images/zmiti.png", "./assets/images/bg1.jpg", "./assets/images/header-bg.jpg", "./assets/images/watch.png", "./assets/images/logo.png", "./assets/images/refresh.png", "./assets/images/share-ico.png", "./assets/images/arron1.png", "http://api.zmiti.com/zmiti_ele/company/mafazhan/works/1359526489/assets/images/qrcode1.png", "http://api.zmiti.com/zmiti_ele/company/mafazhan/material/20171019/79c84e85ca257689d0667dd769378b97.png"],
+	"loadingImg": ["./assets/images/300.png", "./assets/images/zmiti.png", "./assets/images/bg1.jpg", "./assets/images/header-bg.jpg", "./assets/images/watch.png", "./assets/images/logo.png", "./assets/images/refresh.png", "./assets/images/share-ico.png", "./assets/images/arron1.png", "http://api.zmiti.com/zmiti_ele/company/mafazhan/material/20171019/79c84e85ca257689d0667dd769378b97.png"],
 	"shareTitle": "您答对了（{score}）道题，获得“{level}”称号",
 	"shareDesc": "您答对了（{score}）道题，获得“{level}”称号",
 	"isUseWx": false,
