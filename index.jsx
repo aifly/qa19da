@@ -374,7 +374,7 @@ export class App extends Component {
 		var s = this;
 		var url = '"http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl'
 		if(window.config.server === 'zhongguowangshi'){
-			url = url: "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + this.worksid,
+			url = url: "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + this.worksid;
 			appId = window.config.appId;
 		}
 
