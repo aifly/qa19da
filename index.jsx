@@ -375,8 +375,8 @@ export class App extends Component {
 		var s = this;
 		var url = "http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl
 		if (window.config.server === 'zhongguowangshi') {
-			url = "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + worksid;
-			img = 'http://h5.zhongguowangshi.com/' + window.h5name + '/assets/images/300.png';
+			url = "https://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + worksid;
+			img = 'https://h5.zhongguowangshi.com/' + window.h5name + '/assets/images/300.png';
 			appId = window.config.appId;
 		}
 
@@ -685,10 +685,10 @@ export class App extends Component {
 					}
 				}, () => {
 
-
+					var protocol = window.config.protocol;
 
 					$.ajax({
-						url: 'http://api.zmiti.com/v2/works/update_pvnum/',
+						url: protocol + '://api.zmiti.com/v2/works/update_pvnum/',
 						type: "POST",
 						data: {
 							worksid: s.worksid
