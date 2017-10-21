@@ -162,7 +162,7 @@
         z-index: 3; }
     .zmiti-content-main-ui .zmiti-dangjian-question-C .zmiti-dangjian-q-title {
       width: 90%;
-      margin: 130px auto;
+      margin: 100px auto;
       background: rgba(255, 255, 255, 0.8);
       background: #f1f0c0;
       border-radius: 10px;
@@ -289,6 +289,11 @@
     transform: translate3d(640px, 0, 0) scale(0.8);
     background: rgba(255, 255, 255, 0.8);
     z-index: 5000; }
+    .zmiti-content-main-ui .zmiti-dangjian-result-page > div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding-bottom: 40px; }
     .zmiti-content-main-ui .zmiti-dangjian-result-page span {
       color: #d32d32; }
     .zmiti-content-main-ui .zmiti-dangjian-result-page.active {
@@ -296,8 +301,9 @@
       transform: translate3d(0, 0, 0); }
     .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-copyright {
       color: #fff;
-      text-align: center;
-      font-size: 32px; }
+      font-size: 32px;
+      width: 90%;
+      margin: 20px auto; }
     .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-score-C {
       width: 90%;
       margin: 150px auto 50px;
@@ -329,20 +335,28 @@
           left: 0; }
       .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-score-C div:last-of-type span {
         color: #b58f4e; }
-    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn {
+    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-share-btns {
+      width: 90%;
+      height: 70px;
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      -webkit-box-orient: horizontal;
+      margin: 20px auto 40px; }
+    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn, .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1 {
       position: relative;
       width: 90%;
       height: 70px;
       line-height: 70px;
       background: #f1f0c0;
-      margin: 40px auto;
+      margin: 0px auto;
       color: #fff;
       display: -webkit-box;
       -webkit-box-align: center;
       -webkit-box-pack: center;
       -webkit-box-orient: horizontal;
       border-radius: 10px; }
-      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn:before {
+      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn:before, .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1:before {
         content: "";
         position: absolute;
         left: 0;
@@ -350,14 +364,31 @@
         width: 100%;
         height: 100%;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
-      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn img {
+      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn img, .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1 img {
         width: 30px;
         vertical-align: middle;
         position: relative;
         top: -4px; }
-      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn span {
+      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn span, .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1 span {
         display: block;
-        font-size: 34px;
+        font-size: 34px; }
+    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1 {
+      width: 90% !important; }
+      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn1 span {
         margin: 0 20px; }
+    .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn {
+      -webkit-box-flex: 1;
+      margin: 0px auto;
+      width: 100%; }
+      .zmiti-content-main-ui .zmiti-dangjian-result-page .zmiti-dangjian-result-btn span {
+        margin: 0 10px; }
+  .zmiti-content-main-ui .zmiti-team1 {
+    height: 0; }
+  .zmiti-content-main-ui .zmiti-team {
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 30px;
+    margin-top: 20px; }
 
 /*# sourceMappingURL=index.css.map */

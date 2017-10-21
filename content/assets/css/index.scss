@@ -189,7 +189,7 @@ $viewW: 640px;
 
     .zmiti-dangjian-q-title {
       width: 90%;
-      margin: 130px auto;
+      margin: 100px auto;
       background: rgba(255, 255, 255, .8);
       background: #f1f0c0;
       @include br(10px);
@@ -356,6 +356,13 @@ $viewW: 640px;
   }
 
   .zmiti-dangjian-result-page {
+    &>div {
+      @include pos(a);
+      left: 0;
+      top: 0;
+      padding-bottom: 40px;
+    }
+
     @include transition(.3s);
     @include transform(translate3d($viewW, 0, 0) scale(.8));
     background: rgba(255, 255, 255, .8);
@@ -371,8 +378,9 @@ $viewW: 640px;
 
     .zmiti-copyright {
       color: #fff;
-      text-align: center;
       font-size: 32px;
+      width: 90%;
+      margin: 20px auto;
     }
 
     .zmiti-dangjian-score-C {
@@ -420,7 +428,14 @@ $viewW: 640px;
 
     }
 
-    .zmiti-dangjian-result-btn {
+    .zmiti-share-btns {
+      width: 90%;
+      height: 70px;
+      @include displayBox(horizontal);
+      margin: 20px auto 40px;
+    }
+
+    .zmiti-dangjian-result-btn, .zmiti-dangjian-result-btn1 {
       @include pos(r);
       width: 90%;
       height: 70px;
@@ -437,7 +452,7 @@ $viewW: 640px;
         box-shadow: 0 0 20px rgba(0, 0, 0, .5)
       }
 
-      margin:40px auto;
+      margin:0px auto;
 
       img {
         width: 30px;
@@ -453,11 +468,42 @@ $viewW: 640px;
       span {
         display: block;
         font-size: 34px;
+      }
+
+    }
+
+    .zmiti-dangjian-result-btn1 {
+      width: 90% !important;
+
+      span {
         margin: 0 20px;
       }
 
     }
 
+    .zmiti-dangjian-result-btn {
+      -webkit-box-flex: 1;
+      margin: 0px auto;
+      width: 100%;
+
+      span {
+        margin: 0 10px;
+      }
+
+    }
+
+  }
+
+  .zmiti-team1 {
+    height: 0;
+  }
+
+  .zmiti-team {
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 30px;
+    margin-top: 20px;
   }
 
 }
