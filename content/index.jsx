@@ -454,6 +454,7 @@ class ZmitiContentApp extends Component {
 			var scale = (Math.random() * 90 | 0) + 10;
 			//  1—10 （10%——50%） 11—19（60%———90%）   20（99%）
 			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
+			
 			if (this.state.rightAnswerCount === 0) {
 				scale = 0;
 				title = '学习十九大报告，尚需努力！';
