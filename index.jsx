@@ -367,14 +367,16 @@ export class App extends Component {
 		var code_durl = encodeURIComponent(durl);
 
 
-		var appId = appId;
+		var appId = appId,
+			img = img;
 
 
 		var img = 'http://' + location.host + location.pathname + '/assets/images/300.png'
 		var s = this;
-		var url = '"http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl'
-		if(window.config.server === 'zhongguowangshi'){
-			url = url: "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + this.worksid;
+		var url = "http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl
+		if (window.config.server === 'zhongguowangshi') {
+			url = "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + worksid;
+			img = 'http://h5.zhongguowangshi.com/' + window.h5name + '/assets/images/300.png';
 			appId = window.config.appId;
 		}
 
@@ -463,9 +465,9 @@ export class App extends Component {
 			this.state.question = data.question;
 			this.state.worksid = data.worksid;
 			this.worksid = data.worksid;
-			if(window.config.server==='zhongguowangshi'){
+			if (window.config.server === 'zhongguowangshi') {
 				this.state.worksid = window.config.worksid;
-				this.worksid = window.config.worksid;	
+				this.worksid = window.config.worksid;
 			}
 			this.state.wxappid = data.wxappid;
 			this.state.wxappsecret = data.wxappsecret;
@@ -697,6 +699,8 @@ export class App extends Component {
 							}
 						}
 					});
+
+
 					s.wxConfig(
 						s.state.title,
 						window.share.desc,
