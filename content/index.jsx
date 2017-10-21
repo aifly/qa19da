@@ -453,21 +453,23 @@ class ZmitiContentApp extends Component {
 		setTimeout(() => {
 			var scale = (Math.random() * 90 | 0) + 10;
 			//  1—10 （10%——50%） 11—19（60%———90%）   20（99%）
-			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
 			if (this.state.rightAnswerCount === 0) {
 				scale = 0;
-				title = '学习十九大报告，尚需努力！';
-			} 
-			 if (this.state.rightAnswerCount < 10 && this.state.rightAnswerCount>0) {
+
+			}
+			if (this.state.rightAnswerCount < 10 && this.state.rightAnswerCount > 0) {
 				scale = (Math.random() * 40 | 0) + 10;
-			} 
+			}
 			if (this.state.rightAnswerCount >= 10 && this.state.rightAnswerCount <= 19) {
 				scale = (Math.random() * 30 | 0) + 60;
 			}
-		 	if(this.state.rightAnswerCount === 20) {
+			if (this.state.rightAnswerCount === 20) {
 				scale = 99;
 			}
-
+			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
+			if (this.state.rightAnswerCount === 0) {
+				title = '学习十九大报告，尚需努力！';
+			}
 			s.props.wxConfig(
 				title,
 				window.share.desc,
