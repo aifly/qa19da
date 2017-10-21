@@ -452,36 +452,35 @@ class ZmitiContentApp extends Component {
 		//'您答对了'+this.state.rightAnswerCount+'道题，击败了'+(Math.random()*90|0 + 10)+'%的网友，获得"'+ this.state.level +'"称号',
 		setTimeout(() => {
 			var scale = (Math.random() * 90 | 0) + 10;
-			//  1—10 （10%——50%） 11—19（60%———90%）   20（99%）
-<<<<<<< HEAD
-=======
-			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
-			
->>>>>>> 7c1d97ad420febcc4f68b273a7c1934979dd493e
-			if (this.state.rightAnswerCount === 0) {
-				scale = 0;
 
-			}
-			if (this.state.rightAnswerCount < 10 && this.state.rightAnswerCount > 0) {
-				scale = (Math.random() * 40 | 0) + 10;
-			}
-			if (this.state.rightAnswerCount >= 10 && this.state.rightAnswerCount <= 19) {
-				scale = (Math.random() * 30 | 0) + 60;
-			}
-			if (this.state.rightAnswerCount === 20) {
-				scale = 99;
-			}
-			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
-			if (this.state.rightAnswerCount === 0) {
-				title = '学习十九大报告，尚需努力！';
-			}
-			s.props.wxConfig(
-				title,
-				window.share.desc,
-				s.props.shareImg,
-				s.props.appId,
-				s.props.worksid
-			)
+
+			var s = this;
+			$.ajax({
+				type: 'post',
+				url: 'http://api.zmiti.com/v2/h5/save_userusetime/',
+				data: {
+					workid: this.props.worksid,
+					usetime: this.state.clock,
+					score: this.state.rightAnswerCount
+				},
+				success(data) {
+					if (data.getret === 0) {
+						scale = data.percent;
+						var title = window.share.title.replace(/{rightAnswerCount}/, s.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, s.state.level);
+						if (s.state.rightAnswerCount === 0) {
+							title = '学习十九大报告，尚需努力！';
+						}
+						s.props.wxConfig(
+							title,
+							window.share.desc,
+							s.props.shareImg,
+							s.props.appId,
+							s.props.worksid
+						)
+					}
+				}
+			})
+
 		}, 100)
 
 		obserable.trigger({
