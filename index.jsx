@@ -701,15 +701,13 @@ export class App extends Component {
 					});
 
 
-					setTimeout(() => {
-						s.wxConfig(
-							s.state.title,
-							window.share.desc,
-							data.shareImg,
-							data.appId,
-							s.worksid
-						);
-					}, 1000)
+					s.wxConfig(
+						s.state.title,
+						window.share.desc,
+						data.shareImg,
+						data.appId,
+						s.worksid
+					);
 
 					s.forceUpdate();
 
