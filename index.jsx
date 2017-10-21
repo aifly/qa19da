@@ -366,12 +366,21 @@ export class App extends Component {
 		var durl = location.href.split('#')[0]; //window.location;
 		var code_durl = encodeURIComponent(durl);
 
+
+		var appId = appId;
+
+
 		var img = 'http://' + location.host + location.pathname + '/assets/images/300.png'
 		var s = this;
+		var url = '"http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl'
+		if(window.config.server === 'zhongguowangshi'){
+			url = url: "http://h5.zhongguowangshi.com/" + window.h5name + "/weixin/jssdk.php?type=signature&durl=" + code_durl + "&worksid=" + this.worksid,
+			appId = window.config.appId;
+		}
 
 		$.ajax({
 			type: 'get',
-			url: "http://api.zmiti.com/weixin/jssdk.php?type=signature&durl=" + code_durl,
+			url: url,
 			dataType: 'jsonp',
 			jsonp: "callback",
 			jsonpCallback: "jsonFlickrFeed",
@@ -442,6 +451,7 @@ export class App extends Component {
 		var s = this;
 		$.getJSON('./assets/js/data.json', (data) => {
 
+
 			this.state.custom = data.custom;
 			this.state.indexBg = data.indexBg;
 			this.state.indexPage = data.indexPage;
@@ -453,6 +463,10 @@ export class App extends Component {
 			this.state.question = data.question;
 			this.state.worksid = data.worksid;
 			this.worksid = data.worksid;
+			if(window.config.server==='zhongguowangshi'){
+				this.state.worksid = window.config.worksid;
+				this.worksid = window.config.worksid;	
+			}
 			this.state.wxappid = data.wxappid;
 			this.state.wxappsecret = data.wxappsecret;
 			this.state.custom = data.custom;

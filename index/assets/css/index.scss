@@ -160,35 +160,38 @@ $viewW: 640px;
   }
 
   .zmiti-index-note {
-    margin: 140px auto 0;
-    width: 400px;
+    margin: 70px auto 0;
+    width: 550px;
     @include pos(r);
   }
 
   .zmiti-index1 {
-    width: 400px;
+    
     @include pos(a);
-    left: 50%;
-    margin-left: -200px;
-    @include transform(scale(2));
-
+    
+    width: 200px;
+    right: 70px;
+    margin-top: 400px;
+    z-index: 10;
+    @include transform(scale(1.1));
+    opacity:0;
     &.active {
+      opacity:1;
       @include transition_transform(.5s);
       @include transform(scale(1));
     }
-
   }
 
   .zmiti-circle {
-    width: 380px;
+    width: 440px;
     @include pos(a);
-    right: 0;
+    left: 55px;
     opacity: 0;
-
+    top:200px;
+    
     &.active {
       opacity: 1;
       @include transition(.5s .2s);
-      @include transform(rotate(360deg));
     }
 
   }
@@ -196,34 +199,33 @@ $viewW: 640px;
   .zmiti-title1, .zmiti-title2 {
     @include pos(a);
     z-index: 19;
-    margin-top: 100px;
+    margin-top: 30px;
     @include transition(.5s 1s);
 
     &.active {
       @include transform(translate3d(0, 0, 0));
-    }
-
+    } 
   }
 
   .zmiti-title1 {
-    width: 460px;
-    left: -100px;
+    width: 560px;
+    left: 0;
     @include transform(translate3d(-640px, 0, 0));
   }
 
   .zmiti-title2 {
-    width: 400px;
-    top: 120px;
-    left: 100px;
+    width: 500px;
+    top: 80px;
+    left: 0;
     @include transform(translate3d(640px, 0, 0));
   }
 
   .zmiti-begin-test {
     @include pos(a);
-    bottom: 200px;
-    left: 50%;
-    width: 300px;
-    margin-left: -150px;
+    bottom: 40px;
+    left: 68%;
+    width: 200px;
+    margin-left: -220px;
     opacity: 0;
     @include animation(scale 1s linear infinite alternate);
 

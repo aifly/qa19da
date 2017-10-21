@@ -48,7 +48,6 @@ class ZmitiIndexApp extends Component {
 				background: 'url(' + this.props.indexPage + ') no-repeat  center / cover'
 			}
 			conponent = <div ref='zmiti-index-page'  className='lt-full' style={indexStyle}>
-					<span className={'zmiti-sm-title '+this.state.className}>{window.subTitle}</span>
 					<div className='zmiti-index-note'>
 						<img className={'zmiti-index1 '+this.state.className} src='./assets/images/index1.png'/>
 						<img className={'zmiti-circle '+this.state.className} src='./assets/images/circle.png'/>

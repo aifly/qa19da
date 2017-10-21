@@ -453,6 +453,11 @@ class ZmitiContentApp extends Component {
 		setTimeout(() => {
 			var scale = (Math.random() * 90 | 0) + 10;
 			//  1—10 （10%——50%） 11—19（60%———90%）   20（99%）
+<<<<<<< HEAD
+=======
+			var title = window.share.title.replace(/{rightAnswerCount}/, this.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, this.state.level);
+			
+>>>>>>> 7c1d97ad420febcc4f68b273a7c1934979dd493e
 			if (this.state.rightAnswerCount === 0) {
 				scale = 0;
 
