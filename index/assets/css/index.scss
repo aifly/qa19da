@@ -15,7 +15,7 @@ $viewW: 640px;
 
   .zmiti-sm-title {
     font-size: 36px;
-    text-align:center;
+    text-align: center;
     color: #fffcb6;
     text-align: center;
     @include pos(a);
@@ -166,20 +166,20 @@ $viewW: 640px;
   }
 
   .zmiti-index1 {
-    
     @include pos(a);
-    
     width: 200px;
     right: 70px;
-    margin-top: 400px;
+    margin-top: 350px;
     z-index: 10;
     @include transform(scale(1.1));
-    opacity:0;
+    opacity: 0;
+
     &.active {
-      opacity:1;
+      opacity: 1;
       @include transition_transform(.5s);
       @include transform(scale(1));
     }
+
   }
 
   .zmiti-circle {
@@ -187,8 +187,8 @@ $viewW: 640px;
     @include pos(a);
     left: 55px;
     opacity: 0;
-    top:200px;
-    
+    top: 200px;
+
     &.active {
       opacity: 1;
       @include transition(.5s .2s);
@@ -204,7 +204,8 @@ $viewW: 640px;
 
     &.active {
       @include transform(translate3d(0, 0, 0));
-    } 
+    }
+
   }
 
   .zmiti-title1 {

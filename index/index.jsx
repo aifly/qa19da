@@ -50,7 +50,7 @@ class ZmitiIndexApp extends Component {
 			conponent = <div ref='zmiti-index-page'  className='lt-full' style={indexStyle}>
 					<div className='zmiti-index-note'>
 						<img className={'zmiti-index1 '+this.state.className} src='./assets/images/index1.png'/>
-						<img className={'zmiti-circle '+this.state.className} src='./assets/images/circle.png'/>
+						<img className={'zmiti-circle '+this.state.className} src='./assets/images/circle2.png'/>
 						<img className={'zmiti-title1 '+this.state.className} src='./assets/images/1.png'/>
 						<img className={'zmiti-title2 '+this.state.className} src='./assets/images/2.png'/>
 					</div>

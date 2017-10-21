@@ -452,12 +452,11 @@ class ZmitiContentApp extends Component {
 		//'您答对了'+this.state.rightAnswerCount+'道题，击败了'+(Math.random()*90|0 + 10)+'%的网友，获得"'+ this.state.level +'"称号',
 		setTimeout(() => {
 			var scale = (Math.random() * 90 | 0) + 10;
-
-
 			var s = this;
+			var protocol = window.config.protocol;
 			$.ajax({
 				type: 'post',
-				url: 'http://api.zmiti.com/v2/h5/save_userusetime/',
+				url: protocol + '://api.zmiti.com/v2/h5/save_userusetime/',
 				data: {
 					workid: this.props.worksid,
 					usetime: this.state.clock,
@@ -481,7 +480,7 @@ class ZmitiContentApp extends Component {
 				}
 			})
 
-		}, 100)
+		}, 10)
 
 		obserable.trigger({
 			type: 'clearCountdown'
