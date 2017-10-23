@@ -477,33 +477,30 @@ class ZmitiContentApp extends Component {
 		setTimeout(() => {
 			var scale = (Math.random() * 90 | 0) + 10;
 			var s = this;
-			var protocol = window.config.protocol;
-			$.ajax({
-				type: 'post',
-				url: protocol + '://api.zmiti.com/v2/h5/save_userusetime/',
-				data: {
-					workid: this.props.worksid,
-					usetime: this.state.clock,
-					score: this.state.rightAnswerCount
-				},
-				success(data) {
-					if (data.getret === 0) {
-						scale = data.percent;
-						var title = window.share.title.replace(/{rightAnswerCount}/, s.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, s.state.level);
-						if (s.state.rightAnswerCount === 0) {
-							title = '学习十九大报告，尚需努力！';
-						}
-						s.props.wxConfig(
-							title,
-							window.share.desc,
-							s.props.shareImg,
-							s.props.appId,
-							s.props.worksid
-						)
-					}
-				}
-			})
+			if (s.state.rightAnswerCount === 20) {
+				scale = 99;
+			} else if (s.state.rightAnswerCount > 15) {
+				scale = (Math.random() * 20 | 0) + 70;
+			} else if (s.state.rightAnswer > 11) {
+				scale = (Math.random() * 20 | 0) + 50;
+			} else if (s.state.rightAnswerCount > 5) {
+				scale = (Math.random() * 20 | 0) + 30;
+			} else {
+				scale = (Math.random() * 20 | 0) + 4;
 
+			}
+			var title = window.share.title.replace(/{rightAnswerCount}/, s.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, s.state.level);
+			if (s.state.rightAnswerCount === 0) {
+				title = '学习十九大报告，尚需努力！';
+			}
+			s.props.wxConfig(
+				title,
+				window.share.desc,
+				s.props.shareImg,
+				s.props.appId,
+				s.props.worksid
+			)
+			return;
 		}, 10)
 
 		obserable.trigger({
