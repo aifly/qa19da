@@ -489,10 +489,12 @@ class ZmitiContentApp extends Component {
 				scale = (Math.random() * 20 | 0) + 4;
 
 			}
+
 			var title = window.share.title.replace(/{rightAnswerCount}/, s.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, s.state.level);
 			if (s.state.rightAnswerCount === 0) {
 				title = '学习十九大报告，尚需努力！';
 			}
+
 			s.props.wxConfig(
 				title,
 				window.share.desc,
@@ -500,7 +502,6 @@ class ZmitiContentApp extends Component {
 				s.props.appId,
 				s.props.worksid
 			)
-			return;
 		}, 10)
 
 		obserable.trigger({
