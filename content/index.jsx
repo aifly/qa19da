@@ -495,13 +495,41 @@ class ZmitiContentApp extends Component {
 				title = '学习十九大报告，尚需努力！';
 			}
 
-			s.props.wxConfig(
-				title,
-				window.share.desc,
-				s.props.shareImg,
-				s.props.appId,
-				s.props.worksid
-			)
+			var protocol = window.config.protocol || 'http';
+			$.ajax({
+				type: 'post',
+				url: protocol + '://api.zmiti.com/v2/h5/save_userusetime/',
+				data: {
+					workid: this.props.worksid,
+					usetime: this.state.clock,
+					score: this.state.rightAnswerCount
+				},
+				error() {
+					s.props.wxConfig(
+						title,
+						window.share.desc,
+						s.props.shareImg,
+						s.props.appId,
+						s.props.worksid
+					)
+				},
+				success(data) {
+					if (data.getret === 0) {
+						scale = data.percent;
+						var title = window.share.title.replace(/{rightAnswerCount}/, s.state.rightAnswerCount).replace(/{scale}/, scale).replace(/{level}/, s.state.level);
+						if (s.state.rightAnswerCount === 0) {
+							title = '学习十九大报告，尚需努力！';
+						}
+						s.props.wxConfig(
+							title,
+							window.share.desc,
+							s.props.shareImg,
+							s.props.appId,
+							s.props.worksid
+						)
+					}
+				}
+			});
 		}, 10)
 
 		obserable.trigger({
