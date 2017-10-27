@@ -8,7 +8,8 @@
   height: 100%;
   position: absolute;
   left: 0;
-  top: 0; }
+  top: 0;
+  overflow: hidden; }
 
 .zmiti-loading-ui {
   position: fixed;
@@ -163,5 +164,4 @@
   .zmiti-loading-ui a .line3 {
     -webkit-animation: line3 20s ease-in-out infinite;
     animation: line3 20s ease-in-out infinite; }
-
 /*# sourceMappingURL=index.css.map */

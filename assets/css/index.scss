@@ -1,4 +1,5 @@
 ﻿@import './base.scss';
+
 html, body, div, p, ul, li, ol, dl, dt, dd, header, footer, video, h1, h2, h3, h4, canvas, section, figure {
   padding: 0;
   margin: 0;
@@ -15,11 +16,12 @@ li {
 html, body {
   height: 100%;
 }
-body{
-	  
-	  overflow-x:hidden;
-    font-size: 24px;
+
+body {
+  overflow-x: hidden;
+  font-size: 24px;
 }
+
 img {
   border: none;
   vertical-align: middle;
@@ -30,11 +32,12 @@ img {
 input, textarea {
   outline: none;
 }
-$viewW:640px;
-.zmiti-main-ui{
 
-  .zmiti-mask{
+$viewW: 640px;
+
+.zmiti-main-ui {
+  .zmiti-mask {
     z-index: 5001;
-  }  
-  
+  }
+
 }

@@ -674,7 +674,6 @@ export class App extends Component {
 
 
 				s.loading(data.loadingImg, (scale) => {
-					console.log(scale)
 					s.setState({
 						progress: (scale * 100 | 0) + '%'
 					})

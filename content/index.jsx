@@ -674,7 +674,7 @@ class ZmitiContentApp extends Component {
 		this.setState({
 			beginTap: true
 		});
-
+		this.timer && clearInterval(this.timer);
 		this.timer = setInterval(() => {
 			this.setState({
 				clock: this.state.clock + 1
