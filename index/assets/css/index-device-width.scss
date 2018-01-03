@@ -1,5 +1,5 @@
 ﻿@import "../../../assets/css/base.scss";
-$viewW: 10rem;
+$viewW: 640px;
 
 .zmiti-index-main-ui {
   @include pos(a);
@@ -34,7 +34,7 @@ $viewW: 10rem;
   //theme of paper 
   .zmiti-index-paper-theme {
     @include pos(a);
-    width: $viewW;
+    width: 640px;
     height: 100vh;
     left: 50%;
     margin-left: -320px;
@@ -160,16 +160,16 @@ $viewW: 10rem;
   }
 
   .zmiti-index-note {
-    margin: 1.5rem auto 0;
-    width: 8.8rem;
+    margin: 70px auto 0;
+    width: 550px;
     @include pos(r);
   }
 
   .zmiti-index1 {
     @include pos(a);
-    width: 3.125rem;
-    right: 1rem;
-    margin-top: 5.8rem;
+    width: 200px;
+    right: 70px;
+    margin-top: 350px;
     z-index: 10;
     @include transform(scale(1.1));
     opacity: 0;
@@ -183,11 +183,11 @@ $viewW: 10rem;
   }
 
   .zmiti-circle {
-    width: 6.875rem;
+    width: 440px;
     @include pos(a);
-    left: 1.26rem;
+    left: 55px;
     opacity: 0;
-    top: 3rem;
+    top: 200px;
 
     &.active {
       opacity: 1;
@@ -199,6 +199,7 @@ $viewW: 10rem;
   .zmiti-title1, .zmiti-title2 {
     @include pos(a);
     z-index: 19;
+    margin-top: 30px;
     @include transition(.5s 1s);
 
     &.active {
@@ -208,16 +209,16 @@ $viewW: 10rem;
   }
 
   .zmiti-title1 {
-    width: 8.75rem;
-    left: 0.625rem;
-    @include transform(translate3d(-$viewW, 0, 0));
+    width: 560px;
+    left: 0;
+    @include transform(translate3d(-640px, 0, 0));
   }
 
   .zmiti-title2 {
-    width: 7.8rem;
-    top: 1.3rem;
-    left: 0.625rem;
-    @include transform(translate3d($viewW, 0, 0));
+    width: 500px;
+    top: 80px;
+    left: 0;
+    @include transform(translate3d(640px, 0, 0));
   }
 
   .zmiti-begin-test {

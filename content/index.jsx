@@ -495,6 +495,16 @@ class ZmitiContentApp extends Component {
 				title = '学习十九大报告，尚需努力！';
 			}
 
+			s.props.wxConfig(
+				title,
+				window.share.desc,
+				s.props.shareImg,
+				s.props.appId,
+				s.props.worksid
+			)
+
+			return;
+
 			var protocol = window.config.protocol || 'http';
 			$.ajax({
 				type: 'post',

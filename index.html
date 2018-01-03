@@ -7,6 +7,7 @@
 	<title>@所有人:来自新时代的一份考卷，请查收</title>
 	<script>
 		document.addEventListener("touchmove",function(e){e.preventDefault();});
+		document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10+'px';
 	</script>
 	<style>
 	body{
@@ -17,6 +18,7 @@
 		width:100%;
 		text-align: center;
 		top: 50%;
+		font-size: 14px;
 	}
 	.zmiti-back{
 		width: 80px;
@@ -34,7 +36,7 @@
 		<span class='zmiti-loadin-text'>正在进入...</span>
 	</div>
 	<div class="zmiti-back" id="zmiti-back">
-		<a href='http://h5.zhongguowangshi.com/h5-summary1/index.html?zmiti=zmiti'>
+		<a href='http://h5.zhongguowangshi.com/h5-summary2/index.html?zmiti=zmiti'>
 			<img src="./assets/images/back.png">
 		</a>
 	</div>
@@ -82,9 +84,12 @@
 				return null;
 			}
 
-			var key = getQueryString('zmiti');
+			var key = getQueryString('zmiti'),
+				href = (getQueryString('href')||'').split('?')[0];
 			if(key === 'zmiti'){
-				document.getElementById('zmiti-back').style.display = 'block';
+				var back = document.querySelector('#zmiti-back');
+				back.querySelector('a').href = href+'?zmiti=zmiti' || 'http://h5.zhongguowangshi.com/h5-summary4/index.html?zmiti=zmiti';
+				back.style.display = 'block';
 			}
 
 		</script>
